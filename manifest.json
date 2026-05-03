@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "id": "create",
+    "name": "Create",
+    "description": "Create mod from Minecraft but for Neanderthals",
+    "version": "1.0.0",
+    "authors": [
+      "Runic"
+    ]
+  },
+  "recipes": [
+    {
+      "kind": "structure",
+      "ingredients": [
+        ["neanderthals:stick", 3],
+        ["neanderthals:log", 1],
+        ["neanderthals:stone", 1]
+      ],
+      "yield": "create:water_wheel"
+    }
+  ],
+  "structures": [
+    {
+      "model": "assets/WaterWheel.json",
+      "id": "create:water_wheel",
+      "displayName": "Water Wheel",
+      "implementation": "impl/structures/WaterWheel.luau"
+    }
+  ]
+}
