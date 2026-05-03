@@ -10,8 +10,10 @@ return function(id: string, api): ()
 			return
 		end
 
+		local source = info.model.PrimaryPart
 		local cframe = info.model:GetPivot()
 		local rotation = 0
+		source:SetAttribute("RPM", RPM)
 		RunService.Heartbeat:Connect(function(dt)
 			local rotationCFrame = CFrame.Angles(0, 0, math.rad(rotation))
 			local newCFrame = cframe * rotationCFrame

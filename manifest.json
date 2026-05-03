@@ -25,6 +25,11 @@
       "id": "create:water_wheel",
       "displayName": "Water Wheel",
       "implementation": "impl/structures/WaterWheel.luau"
+    },
+    {
+      "model": "assets/Shaft.json",
+      "id": "create:shaft",
+      "implementation": "impl/structures/Shaft.luau"
     }
   ]
 }
