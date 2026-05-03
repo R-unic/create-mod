@@ -12,7 +12,7 @@ return function(id: string, api): ()
 
 		local cframe = info.model:GetPivot()
 		local rotation = 0
-		RunService.RenderStepped:Connect(function(dt)
+		RunService.Heartbeat:Connect(function(dt)
 			local rotationCFrame = CFrame.Angles(0, 0, math.rad(rotation))
 			local newCFrame = cframe * rotationCFrame
 			info.model:PivotTo(newCFrame)
