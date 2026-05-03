@@ -17,6 +17,13 @@
         ["neanderthals:stone", 1]
       ],
       "yield": "create:water_wheel"
+    },
+    {
+      "kind": "structure",
+      "ingredients": [
+        ["neanderthals:stone", 1]
+      ],
+      "yield": "create:shaft"
     }
   ],
   "structures": [
