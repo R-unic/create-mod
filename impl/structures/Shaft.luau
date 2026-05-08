@@ -62,7 +62,7 @@ function Shaft.update(self: Shaft, dt: number): ()
 		isTouching = true
 		inheritedRotation = source.Orientation.Z
 		rpm = source:GetAttribute("RPM")
-		if observedRPMs[rpm] then
+		if rpm and observedRPMs[rpm] then
 			error("invalid connection, undefined behavior currently")
 		end
 
