@@ -58,7 +58,7 @@ function Shaft.transferRotation(self: Shaft, dt: number): ()
 	local rotationCFrame = CFrame.Angles(0, 0, math.rad(self.rotation))
 	local newCFrame = self.baseCFrame * rotationCFrame
 	self.model:PivotTo(newCFrame)
-	rotation += 6 * self.rpm * dt
+	self.rotation += 6 * self.rpm * dt
 end
 
 return function(id: string, api): ()
