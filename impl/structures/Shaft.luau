@@ -24,6 +24,9 @@ local function createShaft(model: Model): ()
 	end)
 end
 
+local overlapParams = OverlapParams.new()
+overlapParams.IncludeInstances = { workspace.StackableStructures } -- definitely temporary
+
 function Shaft.update(self: Shaft, dt: number): ()
 	local touchingParts = workspace:GetPartsInPart(self.root)
 	local isTouching = false
