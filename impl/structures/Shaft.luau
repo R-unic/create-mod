@@ -8,6 +8,7 @@ type Shaft = {
 	read root: BasePart,
 	read raycastParams: RaycastParams,
 	read baseCFrame: CFrame,
+	clockwise: boolean,
 	rotation: number,
 	rpm: number,
 } & typeof(setmetatable({}, Shaft))
@@ -22,6 +23,7 @@ local function createShaft(model: Model): ()
 		root = model.PrimaryPart,
 		raycastParams = raycastParams,
 		baseCFrame = model:GetPivot(),
+		clockwise = true,
 		rotation = 0,
 		rpm = 0,
 	}, Shaft)
@@ -74,6 +76,7 @@ function Shaft.update(self: Shaft, dt: number): ()
 		if n ~= last then
 			error("invalid connection, undefined behavior currently")
 		end
+		last = n
 	end
 
 	self.rotation = inheritedRotation
@@ -86,7 +89,7 @@ function Shaft.transferRotation(self: Shaft, dt: number): ()
 	local rotationCFrame = CFrame.Angles(0, 0, math.rad(self.rotation))
 	local newCFrame = self.baseCFrame * rotationCFrame
 	self.model:PivotTo(newCFrame)
-	self.rotation += 6 * self.rpm * dt
+	self.rotation += 6 * self.rpm * dt * (if self.clockwise then 1 else -1)
 end
 
 function Shaft.setRPM(self: Shaft, rpm: number): ()
