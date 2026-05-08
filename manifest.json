@@ -12,16 +12,28 @@
     {
       "kind": "structure",
       "ingredients": [
-        ["neanderthals:stick", 3],
-        ["neanderthals:log", 1],
-        ["neanderthals:stone", 1]
+        [
+          "neanderthals:stick",
+          3
+        ],
+        [
+          "neanderthals:log",
+          1
+        ],
+        [
+          "neanderthals:stone",
+          1
+        ]
       ],
       "yield": "create:water_wheel"
     },
     {
       "kind": "structure",
       "ingredients": [
-        ["neanderthals:stone", 1]
+        [
+          "neanderthals:stone",
+          1
+        ]
       ],
       "yield": "create:shaft"
     }
@@ -36,6 +48,7 @@
     {
       "model": "assets/Shaft.json",
       "id": "create:shaft",
+      "displayName": "Shaft",
       "implementation": "impl/structures/Shaft.luau"
     }
   ]
